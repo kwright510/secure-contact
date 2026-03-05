@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securely Communicate with Kevin</title>
+<!-- Favicon -->
+   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'%3E%3Cpath d='M12 2L4 5V11C4 16.07 7.41 20.81 12 22C16.59 20.81 20 16.07 20 11V5L12 2Z'/%3E%3C/svg%3E">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .copy-feedback {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        /* Hero Image Styling */
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 9999px;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-xl w-full">
+        <!-- Header Section -->
+                       <div class="text-center mb-8">
+            <!-- Custom Image Placeholder -->
+            <div class="flex justify-center mb-6">
+                <img 
+                    src="avatar.png" 
+                    alt="Avatar" 
+                    class="hero-image"
+                    onerror="this.src='https://via.placeholder.com/120?text=Security'"
+                >
+            </div>
+            
+            <!-- Editable Title -->
+            <h1 class="text-3xl font-bold gradient-text mb-2">Secure Communications</h1>
+            
+        </div>
+
+        <!-- Contact Card -->
+        <div class="glass-card rounded-3xl p-8 space-y-8">
+            
+            <!-- Email Section -->
+            <div class="space-y-2">
+                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 ml-1">Secure Email</label>
+                <div class="flex items-center bg-slate-900/50 rounded-xl p-4 border border-slate-700">
+                    <a href="mailto:kevin.wright@proton.me" class="flex-grow text-blue-400 hover:text-blue-300 transition truncate">
+                        kevin.wright@proton.me
+                    </a>
+                    <button onclick="copyToClipboard('kevin.wright@proton.me')" class="ml-3 text-slate-500 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Signal Section -->
+            <div class="space-y-2">
+                <label class="text-xs font-semibold uppercase tracking-wider text-slate-500 ml-1">Signal Name & QR Code</label>
+                <div class="flex items-center bg-slate-900/50 rounded-xl p-4 border border-slate-700">
+                    <a href="https://signal.me/#eu/pJOgVVRUZjWQFwEZ7-qHnGOg4vjzMAnSarmKjvlKT3l_pcgfSepG55UBu-QhBB8F" target="_blank" class="flex-grow text-blue-400 hover:text-blue-300 transition truncate">
+                        kwright510.817
+                    </a>
+                    <button onclick="copyToClipboard('kwright510.817')" class="ml-3 text-slate-500 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="flex flex-col items-center pt-4 border-t border-slate-700/50">
+                
+                <a href="https://signal.me/#eu/pJOgVVRUZjWQFwEZ7-qHnGOg4vjzMAnSarmKjvlKT3l_pcgfSepG55UBu-QhBB8F" target="_blank" class="qr-container bg-white p-3 rounded-2xl shadow-lg transition-all hover:shadow-blue-500/20">
+                    <img src="kwright510.817.png" alt="Signal QR Code" class="w-52 h-52" onerror="this.src='https://signal.me/#eu/pJOgVVRUZjWQFwEZ7-qHnGOg4vjzMAnSarmKjvlKT3l_pcgfSepG55UBu-QhBB8F'">
+                </a>
+                
+            </div>
+
+ <!-- FOOTER -->
+
+        <footer class="mt-8 text-center text-slate-500 text-xs">Communications using these methods are encrypted end-to-end.
+        </footer>
+    </div>
+
+    <div id="toast" class="copy-feedback">Copied to clipboard!</div>
+
+    <script>
+        function copyToClipboard(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
